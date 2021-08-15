@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link href = "Contact_Me_Style.css" rel ="stylesheet" type ="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+
+    <title>Contact Me</title>
+
+</head>
+<body>
+
+<h5 style= "font-style: italic">
+
+    <nav>
+        <ul class = "homeworkNav">
+            <li><a href="http://codyhale.name/index.html/">Home</a> </li>
+            <li><a href="http://codyhale.name/wdv221homework/">Cody Hale&#39s WDV221 Homework</a></li>
+            <li><a href="http://codyhale.name/wdv101homework/WDV101/homework.html">Cody Hale&#39s WDV101 Homework </a></li>
+            <li><a href="contactme.html">Contact Me</a> </li>
+        </ul>
+    </nav>
+
+</h5>
+
+<h1 class="mainHeading" id="mainHeading">
+    Contact Me
+</h1>
+
+<div id = "formcontainer">
+
+    <form id ="survey" name="survey" method="post" action="contact_form_response.php/">
+        <fieldset class="mainFieldset" style="border: 0 none;">
+
+<h4 class="contact" id="contact">What's your contact information?: </h4>
+
+            <div class="grid-container">
+                <div class="firstname">
+                    <label class="firstname" for = "fname">First Name</label>
+                    <input type="text" name="name" id="fname" class="fname" placeholder="John">
+                </div>
+                <div class="lastname">
+                    <label class="lastname" for="lname">Last Name</label>
+                    <input type="text" name="name" id="lname" class="lname" placeholder="Calvin">
+                </div>
+                <div class="email">
+                    <label class="email" for="emailaddress">Email</label>
+                    <input type="email" name="emailaddress" class = "email" id="emailaddress"
+                           size="40" placeholder="name@anywhere.com"/>
+                </div>
+            </div>
+
+
+<div>
+
+<h4 class="activityHeading" id="activityHeading">What's your favorite pastime activity?:</h4>
+
+
+            <input type="radio" name="videogames" id="videogames" class="videogames" value="videogames" checked="checked"/>
+            <label for="videogames" class="videogames">Video Games</label>
+
+            <input type="radio" name="reading" id="reading" value="reading" class="reading"/>
+            <label for="reading" class="reading">Reading</label>
+
+            <input type="radio" name="movies" id="movies" value="movies" class="movies"/>
+            <label for="movies" class="movies">Watching Movies</label>
+
+            <input type="radio" name="outdoors" id="outdoors" value="outdoors"  class="outdoors"/>
+            <label for="outdoors" class="outdoors">Outdoors or Sports</label>
+</div>
+
+
+            <h4 class="subjects"> I would be interested in discussing: (check all that apply)</h4>
+
+<div class = "interested" style= " text-align: center;">
+
+                <fieldset  class="interested">
+                <input type="checkbox" name="interested" id="js"
+                       value="javascript" checked="checked"/>
+                <label for="js">JavaScript</label>
+            </fieldset>
+
+            <fieldset class="interested">
+                <input type="checkbox" name="interested" id="css" value="css"/>
+                <label for="css">CSS </label>
+            </fieldset>
+
+            <fieldset class="interested">
+                <input type="checkbox" name="interested" id="HTML" value="HTML"/>
+                <label for="HTML">HTML</label>
+            </fieldset>
+
+            <fieldset class="interested">
+                <input type="checkbox" name="interested" id="java" value="java"/>
+                <label for="java">Java</label>
+            </fieldset>
+
+            <fieldset class="interested">
+            <input type="checkbox" name="interested" id="C#" value="C#"/>
+            <label for="C#">C#</label>
+            </fieldset>
+
+            <fieldset class="interested">
+             <input type="checkbox" name="interested" id="SQL" value="SQL"/>
+            <label for="SQL">SQL</label>
+            </fieldset>
+
+
+            <fieldset class="interested">
+                <input type="checkbox" name="interested" id="other" value="other"/>
+                <label for="other">Other programming language</label>
+            </fieldset>
+
+</div>
+<div>
+
+<div class="message" style="display: inline-block; padding: 25px;">
+
+        <label class ="subject" for="subject">Subject: </label>
+
+
+            <select class="subj" name="subject" id="subject">
+                <option value="visit">Schedule meeting</option>
+                <option value="talk">Talk about games</option>
+                <option value="help" selected = "selected">Help with programing</option>
+                <option value="other">Other</option>
+            </select>
+</div>
+    <div>
+
+        <label class="message" for="message">Message Me</label>
+
+            <textarea name="message" id="message" rows="10" cols="45" placeholder="Enter message here: "></textarea>
+    </div>
+</div>
+        </fieldset>
+
+        <input class= "formButton" type="submit" value="Submit" class="button"/>
+
+        <input class= "formButton" type="reset" value="Cancel" class="button"/>
+
+    </form>
+
+
+</div>
+
+</body>
+</html>

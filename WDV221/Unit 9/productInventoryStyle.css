@@ -1,0 +1,20 @@
+html {
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+    color: slateblue;
+}
+
+form {
+    text-align: center;
+}
+
+.productLookup {
+    color: slateblue;
+}
+
+.resetButton {
+    color: slateblue;
+}

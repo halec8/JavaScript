@@ -1,0 +1,83 @@
+<script>
+
+    // Creates an alert at the time the page loads to say my name.
+    function sayHello(){
+
+        window.alert("Cody Hale");
+    }
+
+    // calls the function so that the alert displays.
+    sayHello();
+</script>
+
+<script>
+
+    // displays my name written on the page.
+    function printHello(){
+
+        document.write("Cody Hale");
+    }
+// calls the function so that the contents in document.write are displayed.
+    printHello();
+
+</script>
+
+<!--
+purely aesthetic and adds separation between the first call of the function and the second call.
+-->
+
+<p>
+
+</p>
+
+<!--
+creates a new script for the second call of the printHello() function to display my name a second time as
+required by question 2.
+-->
+<script>
+// calls the printHello() function a second time as required for questions 2. This displayed my name a second time.
+    printHello();
+
+</script>
+
+<h1>
+<!--
+
+creates a new script so that I can call the printHello() function within an H1 element as required by
+question number 3.
+-->
+    <script>
+
+        // calls the printHello() function to display my name within the H1 element.
+        printHello();
+
+    </script>
+</h1>
+
+
+<script>
+
+/*
+
+creates an event listener to call the charCount function whenever you click the page
+this will display the number of characters for whatever letter, word or phrase was entered within
+the alert window that the click will show.
+
+*/
+addEventListener("click", charCount);
+
+/*
+creates a function that assigns two local variables descriptionString and testString
+the function takes no arguments but creates an alert that prompts the user to enter in a
+letter, word or phrase. The function then counts the number of characters within what is entered.
+
+*/
+
+    function charCount() {
+        let descriptionString = "The number of characters in your string are: "
+        let testString = prompt("Insert a letter, word or phrase and i'll count the characters: ");
+        window.alert(descriptionString + "" + testString.length);
+    }
+
+
+</script>

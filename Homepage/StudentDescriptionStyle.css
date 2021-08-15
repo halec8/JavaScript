@@ -1,0 +1,86 @@
+html {
+    background-color: #fae3b9;
+}
+
+/* the code below is to create a custom navigation panel that lays horizontal, example of inline nav */
+nav ul {
+    list-style-type: none;
+    margin: -10;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: lightsalmon;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+nav li a:hover {
+    background-color: #111;
+}
+
+/* centers the header */
+.mainHead {
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+
+}
+
+/* puts the picture of my family to the left and creates a unique border */
+.familyPhoto {
+
+    float: right;
+    border: solid #2f3233 15px;
+    background-color: #fae3b9;
+    padding: 15px;
+    margin: 25px 25px 10px 30px;
+}
+
+
+.liamAndHarper {
+
+    float: Left;
+    border: solid #2f3233 15px;
+    background-color: #fae3b9;
+    padding: 15px;
+    margin: 25px 25px 10px 30px;
+
+}
+
+.aria {
+
+    float: right;
+    border: solid #2f3233 15px;
+    background-color: #fae3b9;
+    padding: 15px;
+    margin-right: 10px;
+    margin-top: 25px;
+    margin-left: 25px;
+
+}
+
+p {
+    text-indent: 1em;
+    font-size: 25px;
+    font-family: 'Amatic SC', cursive;
+}
+
+p.mainParagraph::first-letter {
+    color: black;
+    font-size: xx-large;
+}
+
+.secondParagraph {
+
+    margin-top: 75px;
+}

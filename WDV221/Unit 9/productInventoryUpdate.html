@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product inventory</title>
+
+    <link href="productInventoryStyle.css" rel="stylesheet">
+
+
+    <script>
+
+        let products = ["pen", "paper", "pencil"]
+        let inventory = [0];
+
+
+
+        // searches for a product within the array; if its available it displays the product and if its not there it displays a validation error
+
+        function productLookup() {
+
+            let searchedProduct = document.getElementById("product").value;
+
+            if (products.indexOf(searchedProduct) >= 0) {
+
+                return document.getElementById("allProducts").innerHTML = "<p>" + "The product was found." + "</p>";
+            }
+            
+
+                return document.getElementById("allProducts").innerHTML = "<p>" + "The product was not found, try searching another product." + "</p>";
+            }
+
+
+            // append the array based upon what the user entered
+
+            function addInventoryItem() {
+
+                let appendedProducts;
+
+                appendedProducts = document.getElementById("product").value;
+
+                products.push(appendedProducts);
+
+                document.getElementById("product").value = null;
+
+            }
+
+
+            // clears the form
+
+            function clearForm() {
+
+                document.getElementById("allProducts").innerHTML = "";
+            }
+
+
+            // lists all products in the array
+
+            function listAllProducts() {
+
+                for (let i = 0; i < products.length; i++) {
+
+                    let allProducts = products[i];
+
+                    document.getElementById("allProducts").innerHTML += "<p>" + allProducts + "</p>";
+
+                }
+            }
+
+
+    </script>
+</head>
+<body>
+
+<h1>
+    Product Inventory
+</h1>
+
+<form>
+
+    <form id="form1" name="form1" method="post" action="">
+
+        <p class = "productLookup">
+            
+            <label for="product">Product Lookup:</label><input type="text" name="product" id="product" class="product" placeholder="Enter the product name"/>
+
+        </p>
+
+
+        <input type="button" value="Add Product" id="add" class="add" onclick="addInventoryItem()"/>
+        <input type="button" value="Product Lookup" id="lookup" class="lookup" onclick="productLookup()"/>
+        <input type="button" value="List All Products" id="Products" class="allProducts" onclick="listAllProducts()"/>
+        <input type="reset" name="Reset" id="resetButton" class="resetButton" value="Reset" onclick="clearForm();">
+
+        <h3>Products: </h3>
+
+        <p>
+            <span id = "allProducts" class="allProducts">
+
+            </span>
+        </p>
+
+</form>
+
+</form>
+</body>
+</html>

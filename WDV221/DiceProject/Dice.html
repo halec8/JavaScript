@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice</title>
+</head>
+<body>
+
+<script>
+
+    var playerName;
+    var wins = 0;
+
+    function getName() {
+
+        playerName = prompt("Please enter your name: ")
+    }
+
+    getName();
+
+    console.log(wins);
+
+</script>
+
+<h1>
+    Welcome
+    <script>
+        document.write(playerName);
+        productCount = 'hello'
+    </script>
+</h1>
+
+<p>Choose Difficulty:
+<select Title="difficulty" id="mySelect" onchange="myOnChangeFunction()">
+    <option value="Easy = 2">Easy
+    <option value="Regular = 7"> Regular
+    <option value="Hard = 10">Hard
+</select>
+</p>
+
+
+<p id = "difficulty"></p>
+
+<script>
+    // creates a function that allows you to change the band member in the select/onchange
+    function myOnChangeFunction() {
+        var difficulty = document.getElementById("mySelect").value;
+        document.getElementById("difficulty").innerHTML = difficulty;
+    }
+
+</script>
+
+</body>
+</html>

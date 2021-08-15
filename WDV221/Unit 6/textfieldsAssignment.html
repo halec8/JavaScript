@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WDV221 Intro Javascript - Operators and Textfields Assignment</title>
+
+<style>
+
+body {background-color:#C99;
+}
+
+.highlightTitle	{
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-style:italic;
+	font-size:14px;
+	text-decoration:underline;
+	color:#096;
+}
+
+
+</style>
+
+
+<script>
+	var count = 1;
+    var value1;
+    var value2;
+
+	// displays the value that was entered in the text field for value 1
+
+        function displayValue1(){
+
+            value1 = document.getElementById("val1").value;
+
+        document.getElementById("displayVal1").value = value1;
+
+    }
+
+    // displays the value that was entered in the textfield for value 2
+
+    function displayValue2(){
+
+            value2 = document.getElementById("val2").value;
+            document.getElementById("displayVal2").value = value2;
+    }
+
+
+    // multiples the values that was entered in the value1/value2 text fields and displays them
+
+    function multiplyValues(){
+
+            value1 = document.getElementById("val1").value;
+            value2 = document.getElementById("val2").value;
+            var multiply = value1*value2;
+
+            document.getElementById("multiply").value = multiply;
+
+
+    }
+
+    // gets the values from value1/value2 text fields, parse's them, adds them and displays them in the textfield
+    function addValues(){
+
+        value1 = document.getElementById("val1").value;
+        value2 = document.getElementById("val2").value;
+
+        var val1 = parseInt(value1);
+        var val2 = parseInt(value2)
+        var add = val1+val2;
+
+        document.getElementById("add").value = add;
+
+    }
+
+    // increments the count variable by 1 each time the increment button is clicked
+    function incrementValues(){
+
+            document.getElementById("increment").value = count++;
+
+    }
+
+</script>
+
+
+</head>
+
+<body>
+<h2>WDV221 Intro Javascript</h2>
+<h3>Project 3 - Operators and Textfields - Assignment</h3>
+<hr />
+<p>Please complete the following exercises on this page. When complete post this page to your  server. Make a link in your WDV221 homework  page for this assignment. </p>
+<p>Include a comment in each script with the exercise number and a description of what the script is supposed to do.</p>
+<p>Using Blackboard submit this  Assignment.</p>
+<hr />
+<h3>Instructions</h3>
+<p>Use the form fields for the input values. For each of the following exercises create a function what will be activated by the button.  </p>
+<form name="form1" method="post" action>
+  <p>Enter a number for value1:
+
+    <input type="text" name="val1" id = "val1"/>
+
+  </p>
+
+
+  <p>Enter a number for value 2:
+    <input type="text" name="val2" id="val2"/>
+
+  </p>
+
+
+  <p>1.
+
+
+      <input type="button" name="button" value="Display value1" onclick="displayValue1()"/>
+
+    Display the value you entered for value1:
+
+  <input type="text" name = "displayVal1" id = "displayVal1"/>
+
+  </p>
+
+
+
+  <p>2.
+    <input type="button" value="Display value2" onclick="displayValue2()"/>
+    Display the value you entered for value2:
+  <input type="text" name="displayVal2" id = "displayVal2"/>
+  </p>
+
+
+  <p>3.
+    <input type="button" value="Multiply" onclick="multiplyValues()" />
+    Display the value of value1 * value2:
+  <input type="text" name="multiple" id ="multiply"/>
+  </p>
+
+  <p>4.
+    <input type="button" value="Add" onclick="addValues()"/>
+    Display the results of value1 + value2 in the following textfield.
+  <input type="text" name="add" id = "add"/>
+  </p>
+
+
+  <p>5.
+    <input type="button" value="Increment count" onclick="incrementValues()" />
+    Use the increment operator to add 1 to count and display the new value of count.
+  <input type="text" name="increment" id="increment"/>
+  </p>
+
+  <p>
+    <input type="reset" name="Reset" id="button" value="Reset">
+  </p>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

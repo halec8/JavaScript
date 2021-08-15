@@ -1,0 +1,123 @@
+html {
+    background-color: #fae3b9;
+    text-align: center;
+}
+
+.mainHeading{
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    font-size: 36px;
+
+}
+
+.contact{
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+}
+
+.activityHeading {
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+}
+
+.grid-container {
+    text-align: center;
+    display: inline-grid;
+    grid-column-gap: 25px;
+    justify-content: space-evenly;
+}
+
+.firstname {
+    font-family: 'Amatic SC', cursive;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    justify-content: space-evenly;
+    text-align: left;
+
+}
+
+.lastname {
+    font-family: 'Amatic SC', cursive;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
+    justify-content: space-evenly;
+
+}
+
+.email {
+    font-family: 'Amatic SC', cursive;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    margin: 5px;
+    text-align: left;
+
+}
+.subjects {
+
+    font-family: 'Amatic SC', cursive;
+    font-size: 24px;
+}
+
+
+.interested{
+    font-family: 'Amatic SC', cursive;
+   display: inline;
+    border: 0 none;
+}
+
+
+.message, .fname, .lname, .videogames, .reading, .movies,.outdoors, .email {
+    font-family: 'Amatic SC', cursive;
+}
+
+.personal {
+    font-family: 'Amatic SC', cursive;
+
+}
+
+.message {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+}
+
+.subj {
+    display: inline;
+}
+.subject {
+    font-size: 24px;
+}
+
+.formButton {
+    margin: 25px 0px 25px 0;
+}
+
+/* the code below is to create a custom navigation panel that lays horizontal, example of inline nav */
+nav ul {
+    list-style-type: none;
+    margin: -10;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: lightsalmon;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+
+nav li a:hover {
+    background-color: #111;
+}

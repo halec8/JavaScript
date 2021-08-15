@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html lnag="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!--
+    Provides a image at the top of the webpage
+    -->
+    <img src="https://crypticrock.com/wp-content/uploads/2017/11/phi-slide.jpg" style="width:50%"/>
+    <!--
+    Provides the resource for where the image came from
+    -->
+    <h3> This image came from
+
+        <a href="http://www.metalnerd.net/phinehas-release-tetelestai-live-video/">Cryptic Rock</a>
+
+    </h3>
+    <!--
+    Title of the webpage
+    -->
+    <Title>Band Sampler Website</Title>
+
+</head>
+
+<!--
+creates an onload that checks the cookies
+-->
+<body onload="checkUserCookies()" style="background-color: darkgray; text-align:center"></body>
+
+<!--
+Uses CSS to style the buttons and select buttons
+-->
+<style>
+
+
+    #mySelect {
+        color: black;
+        background-color: lightgray;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 12px;
+        padding: 16px
+    }
+
+    #song {
+        color: black;
+        background-color: lightgray;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 12px;
+        padding: 16px
+    }
+
+
+    #songLyrics {
+
+        color: black;
+        background-color: lightgray;
+        border: 2px solid black;
+        text-align: center;
+        border-radius: 12px;
+        padding: 16px;
+
+    }
+
+</style>
+
+<body>
+
+<script>
+
+    // creates a function for the onload to check if user cookies are enabled
+    function checkUserCookies() {
+
+        if (navigator.cookieEnabled == true) {
+
+            alert("Cookies are enabled on this site.")
+        } else {
+            alert("Cookies haven't been enabled on this site.");
+        }
+
+    }
+
+    // creates an alert function that welcomes the user when they visit the webpage
+    function alertFunction() {
+        alert("Welcome to my webpage! Here you can listen to a song that will rock your world! Conveniently the lyrics are available for your viewing pleasure. Enjoy!!")
+    }
+
+    // calls the alert function
+    alertFunction();
+
+</script>
+
+
+<!--
+displays the heading of the webpage
+-->
+
+<h1>Band Sampler</h1>
+
+<!--
+describes the reason for the webpage
+-->
+<h4>This webpage is designed to help you check out a new band you may have never heard before. Below is a sample of a
+    song for you to enjoy!</h4>
+
+<!--
+creates a onchange and allows the user to select different options for a different description of what role the band member has
+-->
+
+<p>Select a band member to see what their role is the band.</p>
+
+<select Title="Band Member" id="mySelect" onchange="myOnChangeFunction()">
+    <option value="Lead Vocals">Sean McCulloch
+    <option value="Bass"> Bryce Kelly
+    <option value="Guitar">Daniel Gailey
+    <option value="Drums">Isaiah Perez
+</select>
+
+<p id="bandMember"></p>
+
+
+<script>
+    // creates a function that allows you to change the band member in the select/onchange
+    function myOnChangeFunction() {
+        var bandMember = document.getElementById("mySelect").value;
+        document.getElementById("bandMember").innerHTML = bandMember;
+    }
+</script>
+
+<p>
+    First, sample one of their heavy hitters to see if you enjoy their metalcore style of music!
+</p>
+
+<!--
+creates a button that takes you to a specific link to listen to a song
+-->
+
+<input type="button" id="song" onclick=window.open('https://www.youtube.com/watch?v=WBCFL1v2Ez4');
+       value="Click To Play Song" title="Phinehas - I Am The Lion"/>
+
+
+<p>
+    Could you make out what they said?! Check out the lyrics to dive into their poetic masterpiece and experience the
+    words behind their masterpiece.
+</p>
+
+<!--
+creates a button called Song Lyrics that takes you to a specified link for the lyrics of the song
+-->
+<input type="button" id="songLyrics"
+       onclick=window.open('https://www.flashlyrics.com/lyrics/phinehas/i-am-the-lion-21');
+       value="Song Lyrics" title="Phinehas - I Am The Lion Lyrics"/>
+
+<script>
+    // calls the hoverOver function to change the button text
+    document.getElementById("song").onmouseover = function () {
+        hoverOver()
+    };
+
+    // calls the hoverOut function to change the button text back
+    document.getElementById("song").onmouseout = function () {
+        hoverOut()
+    };
+
+
+    document.getElementById("songLyrics").onmouseover = function () {
+        mouseOver()
+    };
+    // calls the mouseOut fucntion to make an alert when you move the mouse away from the Song Lyrics button
+    document.getElementById("songLyrics").onmouseout = function () {
+        mouseOut()
+    };
+
+    //function that changes the text of a button
+    function hoverOver() {
+
+        document.getElementById("song").setAttribute("value", "Phinehas - I Am The Lion");
+    }
+
+    // function that changes the text of a button
+    function hoverOut() {
+
+        document.getElementById("song").setAttribute("value", "Click To Play Song")
+    }
+
+    // function that changes the text of the button
+    function mouseOver() {
+
+        document.getElementById("songLyrics").setAttribute("value", "Phinehas - I Am The Lion Lyrics");
+    }
+
+    // function that causes changes the button text
+    function mouseOut() {
+        document.getElementById("songLyrics").setAttribute("value", "Song Lyrics");
+    }
+
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>WDV221 Intro Javascript</title>
+
+<script>
+
+
+	//---Global Vars---
+	var PlayerName = "New Player";
+	var Wins = 0;
+	var Dice1Value;
+	var Dice2Value;
+	var Attempts = 0;
+
+	
+	//------------
+
+	//--Player Functions--
+	function newPlayer()
+	{
+		//get New player name and assign it to the global PlayerName
+		PlayerName = document.getElementById("PlayerNameInput").value;
+		Wins = 0; //Reset the Global Wins to 0
+        Attempts = 0; //Reset to 0
+		//Update the welcome message
+		fillWelcomeMessage();
+	}
+	
+	function fillWelcomeMessage()
+	{
+		document.getElementById("playerNameWelcome").innerHTML = PlayerName;
+	}
+	//-----------
+	
+	//--User Settings	
+	function formatSelectOption(inOption, inValue)
+	{
+		return "<option value='" + inValue + "'>" + inOption + "</option>";	
+	}
+	
+	function getSelectedSettingOptionText()
+	{
+		var x = document.getElementById("SettingsSelectList");		
+		return x.selectedOptions[0].innerHTML;
+	}
+	
+	function userSettingChanged()
+	{
+		var msg = "Settings changed to " +  getSelectedSettingOptionText();
+		document.getElementById("SettingsMessage").innerHTML = msg;
+		return;
+	}
+	//----------
+	
+	
+	//--Score Functions--
+	function addAttempt(inWin)
+	{
+		Attempts += 1;
+		Wins += 1;
+
+		setWins();
+		
+		return;
+	}
+
+	
+	function setWins()
+	{
+		var winsMsg = PlayerName + " has " + Wins + " wins over" +  " " + Attempts;
+		document.getElementById("WinsSection").innerHTML = winsMsg;
+		return;
+	}
+	//------
+	
+	//--Dice/Gameplay Functions--
+	function adjustImage(inID, inImagePath)
+	{
+		document.getElementById(inID).src = inImagePath;
+		return;
+	}
+	
+	function adjustDiceImage(inDiceID, inDiceValue)
+	{
+		var diceImage = "imgs/"+inDiceValue+".PNG"
+		document.getElementById(inDiceID).src = diceImage;
+		return;
+	}
+	
+
+	function roll() {
+
+	    return Math.floor(Math.random() * 6) + 1
+    }
+	
+	//--------
+
+
+    function rollDice(){
+
+	    Dice1Value = roll();
+	    Dice2Value = roll();
+
+        adjustDiceImage("dice1", Dice1Value);
+        adjustDiceImage("dice2", Dice2Value);
+        setDiceValue();
+    }
+
+
+    function setDiceValue(){
+
+	    var diceValue;
+	    diceValue = Dice1Value + Dice2Value;
+	 document.getElementById("DiceValueSection").innerHTML = "You rolled " + diceValue;
+
+    }
+
+  </script>
+  
+
+
+</head>
+
+<body id="mainBody" onload="fillWelcomeMessage();">
+
+<h1>Welcome <span id="playerNameWelcome"></span> </h1>
+
+<p>Enter New Player:</p>
+<input type="text" id="PlayerNameInput" />
+<input type="button" value="Add New Player" onclick="newPlayer()"/>
+
+<p>&nbsp;</p>
+
+
+<h2 id="SettingsHeader">Settings</h2>
+	<p id="SettingsMessage"></p>
+	<!--Settings Section -->
+	<select id="SettingsSelectList" onchange="userSettingChanged();">
+	<script>
+		//Use JS to fill the list
+		document.write(formatSelectOption("Easy",2));
+		document.write(formatSelectOption("Regular",7));
+		document.write(formatSelectOption("Hard",10));
+		
+		
+	</script>
+	</select>
+
+
+	<h1>Score</h1>
+<p id="WinsSection">&nbsp;</p>
+
+	
+<br/>
+
+<img src="" id="dice1" />
+<img src="" id="dice2" />
+
+<p id="DiceValueSection">&nbsp</p>
+
+
+
+<br/>
+
+<button onclick="rollDice()">Roll</button>
+<button onclick="setWins();">Wins</button>
+<button onclick="addAttempt(true);">I Win</button>
+
+
+<script>
+	
+	//Set images at the start
+	adjustDiceImage("dice1", 1);
+	adjustDiceImage("dice2", 1);
+	
+</script>
+
+
+
+<script>
+	/* Previous instructions
+	---Runtime Scripts--
+	Unit 1 and 2
+		Use JS to created a List with the values of Easy, Regular, and Hard
+			Easy = 2, Regular = 7, Hard = 10?
+		
+		Create a global variable called Name
+		Use a prompt to gather the name and fill in the variable
+		Use a runtime script to say "Welcome <name>" (Welcome Matt
+		
+		Create a global variable called wins and set it's intial value to 0
+		use a runtime script to log it to the console "You have 0 wins"
+	*/
+	/*
+		Unit 3 And Unit 4(functions)
+		
+	1. write a function that alerts the value in the global variable wins
+		call with a runtime script (this will be 0)
+		Format the message to say "<name> has <wins> wins" example "Matt Has 0 wins"
+		Replace the console.log with a call to this function
+	
+	2. write a function that takes a string and value and returns the results wrapped in HTML option
+		Example fxn("easy", 2) returns "<option value='2'>easy</option>"
+		Modify the list creation to call the function
+
+---Event Driven---
+Unit 5 Events
+	Write a function that triggers from the change of the list to display a message in the SettingsMessage html depending on the difficulty settings
+		Use the procided getSelectedSettingOptionText function to get the difficulty
+		Display the message "Settings changed to <difficulty" for example "Settings changed to hard"
+
+
+	Write a function that adjusts src of an image.
+	This will take the id of the image, and the path to the image.
+		ex: adjustImage(inID, inImagePath)
+	Call the function twice to set the image of dice1 and dice2 to "1.PNG"
+
+	
+	Change the wins button to fill in the HTML WinsSection with the message of wins for player.
+		
+	*/
+</script>
+
+</body>
+</html>
